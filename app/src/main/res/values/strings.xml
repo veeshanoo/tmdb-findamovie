@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">TMDB - Find your Movie</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="recommended_for_you">Recommended for you</string>
+    <string name="sign_in_header">Sign in</string>
+    <string name="sign_up_header">Sign up</string>
+    <string name="sign_up_button">Sign up</string>
+    <string name="email_hint">Email</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_in_guest">Sign in as guest</string>
+    <string name="title_profile">Profile</string>
+    <string name="recently_watched">Recently visited</string>
+    <string name="movie">Movie</string>
+    <string name="title_my_movies">My movies</string>
+    <string name="added_watch_later">Added to Watch Later</string>
+    <string name="watch_later_text">Watch Later</string>
+    <string name="already_watched_text">Already Watched</string>
+    <string name="title_search">Search</string>
+    <string name="movie_search_hint">Enter movie name</string>
+</resources>

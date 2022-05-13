@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="dev.skyit.tmdb_findyourmovie.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="dev.skyit.tmdb_findyourmovie.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_my_movies"
+        android:name="dev.skyit.tmdb_findyourmovie.ui.mymovies.MyMoviesFragment"
+        android:label="@string/title_my_movies"
+        tools:layout="@layout/fragment_my_movies" >
+        <action
+            android:id="@+id/action_navigation_my_movies_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="dev.skyit.tmdb_findyourmovie.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profile_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="dev.skyit.tmdb_findyourmovie.ui.movie_details.MovieDetailsFragment"
+        android:label="@string/movie"
+        tools:layout="@layout/fragment_movie_details">
+        <argument
+            android:name="movie_db"
+            app:argType="dev.skyit.tmdb_findyourmovie.db.Models.MovieDb" />
+        <argument
+            android:name="image_transition_id"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="movie_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_movieDetailsFragment_to_webFragment"
+            app:destination="@id/webFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="dev.skyit.tmdb_findyourmovie.ui.signup.SignUpFragment"
+        android:label="@string/sign_up_header"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="dev.skyit.tmdb_findyourmovie.ui.signin.SignInFragment"
+        android:label="@string/sign_in_button"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="dev.skyit.tmdb_findyourmovie.ui.common.WebFragment"
+        android:label="WebFragment"
+        tools:layout="@layout/fragment_web">
+        <argument
+            android:name="link"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>
